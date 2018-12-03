@@ -1,5 +1,6 @@
 import strutils, sequtils, sugar, os, sets, tables
 
+# Process part one
 proc partOne(file: seq[string]): int =
     var restab = initTable[int, int]()
     var checksum = 0
@@ -23,22 +24,8 @@ proc partOne(file: seq[string]): int =
     for x, y in restab:
         result *= y
 
+# Process part two
 proc partTwo(file: seq[string]): string =
-    #[let llen = file[0].len
-    for xl in file:
-        for yl in file:
-            var diff = ""
-            var wrong = 0
-            for i in 0 ..< llen:
-                if xl[i] == yl[i]:
-                    diff.add xl[i]
-                else:
-                    inc wrong
-                    if wrong > 1:
-                        break
-            if wrong == 1:
-                return diff]#
-  
     let lstLen = file[0].len
     for i in file:
         for j in file:
@@ -53,7 +40,6 @@ proc partTwo(file: seq[string]): string =
                        break
             if wrong == 1:
                 return dif
-
 
 let file = readFile("input.txt").splitLines.filterIt(it.len > 0)
 echo file.partOne
