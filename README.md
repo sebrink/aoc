@@ -7,5 +7,6 @@ I will be tracking my progress using Trello at this link: https://trello.com/b/I
 
 ### Languages
 Day 1: Python3.7\
-Day 2: TBA\
-Day 3: TBA
+Day 2: Nim\
+Day 3: TBA\
+Day 4: TBA
