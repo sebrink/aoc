@@ -23,5 +23,38 @@ proc partOne(file: seq[string]): int =
     for x, y in restab:
         result *= y
 
+proc partTwo(file: seq[string]): string =
+    #[let llen = file[0].len
+    for xl in file:
+        for yl in file:
+            var diff = ""
+            var wrong = 0
+            for i in 0 ..< llen:
+                if xl[i] == yl[i]:
+                    diff.add xl[i]
+                else:
+                    inc wrong
+                    if wrong > 1:
+                        break
+            if wrong == 1:
+                return diff]#
+  
+    let lstLen = file[0].len
+    for i in file:
+        for j in file:
+            var dif = ""
+            var wrong = 0
+            for k in 0 ..< lstLen:
+                if i[k] == j[k]:
+                    dif.add i[k]
+                else:
+                    inc wrong
+                    if wrong > 1:
+                       break
+            if wrong == 1:
+                return dif
+
+
 let file = readFile("input.txt").splitLines.filterIt(it.len > 0)
 echo file.partOne
+echo file.partTwo
