@@ -29,8 +29,9 @@ func main() {
 	var counter int
 	var claims []claim
 	var line string
-    scanner := bufio.NewScanner(file)
-    for scanner.Scan() {
+
+	scanner := bufio.NewScanner(file)
+	for scanner.Scan() {
 		var c claim
 		line = scanner.Text()
 		fmt.Sscanf(line, "#%d @ %d,%d: %dx%d", &c.id, &c.x, &c.y, &c.w, &c.h)
