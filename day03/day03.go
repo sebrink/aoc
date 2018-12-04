@@ -30,12 +30,15 @@ func main() {
 	var claims []claim
 	var line string
 
+	// Process data for struct
 	scanner := bufio.NewScanner(file)
 	for scanner.Scan() {
 		var c claim
 		line = scanner.Text()
 		fmt.Sscanf(line, "#%d @ %d,%d: %dx%d", &c.id, &c.x, &c.y, &c.w, &c.h)
 		claims = append(claims, c)
+
+		// Process data for part one
 		for i := c.x; i < c.x+c.w; i++ {
 			for j := c.y; j < c.y+c.h; j++ {
 				if fabric[i][j] == 0 {
@@ -47,6 +50,26 @@ func main() {
 			}
 		}
 	}
-	fmt.Printf("Part 1: %v\n", counter)
 
+	// Process data for part two
+	for index, claim := range claims {
+		var flag bool
+		for i := claim.x; i < claim.x+claim.w; i++{
+			if flag {
+				break
+			}
+			for j := claim.y; j < claim.y+claim.h; j++{
+				if fabric[i][j] != 1{
+					flag = true
+					break
+				}
+			}
+
+		}
+		if !flag {
+			fmt.Printf("Part 1: %v\n", counter)
+			fmt.Printf("Part 2: %v\n", index+1)
+			break
+		}
+	}
 }
