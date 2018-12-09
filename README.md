@@ -12,7 +12,7 @@ Day 1: Python3.7\
 Day 2: Nim\
 Day 3: Go\
 Day 4: Powershell\
-Day 5: TBA\
+Day 5: Bash (no awk,grep,sed)\
 Day 6: TBA\
 Day 7: TBA\
 Day 8: TBA\
