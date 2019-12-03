@@ -39,6 +39,7 @@ func fileProccessor(puzzle string) int {
 
 	scanner := bufio.NewScanner(file)
 
+	// I need to learn how to initialize a slice/array rather than doing this
 	var input = ""
 	for scanner.Scan() {
 		input = (scanner.Text())
